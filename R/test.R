@@ -1,7 +1,6 @@
-library(tidyverse)
 # Add task function
-add_task <- function(tasks = NULL) {
-  if (is.null(tasks)) {
+add_task <- function() {
+  if (!exists("tasks", envir = .GlobalEnv)) {
     tasks <- data.frame(
       Description = character(),
       Due_Date = character(),
@@ -10,6 +9,8 @@ add_task <- function(tasks = NULL) {
       Completed = logical(),
       stringsAsFactors = FALSE
     )
+  } else {
+    tasks <- get("tasks", envir = .GlobalEnv)
   }
 
   repeat {
@@ -39,6 +40,34 @@ add_task <- function(tasks = NULL) {
     if (tolower(add_another) != "yes") {
       break
     }
+  }
+
+  # Update tasks in global environment
+  assign("tasks", tasks, envir = .GlobalEnv)
+}
+
+
+# Prioritize function
+prioritize <- function(tasks) {
+  cat("What do you want to prioritize?\n")
+  cat("1. Due Date\n")
+  cat("2. Completion Status\n")
+  cat("3. Priority Level\n")
+
+  choice <- as.integer(readline(prompt = "Enter your choice (1/2/3): "))
+
+  if (choice == 1) {
+    # Sort tasks by Due_Date
+    tasks <- tasks[order(as.Date(tasks$Due_Date, "%Y-%m-%d")), ]
+  } else if (choice == 2) {
+    # Sort tasks by Completed (completed tasks first)
+    tasks <- tasks[order(tasks$Completed, decreasing = TRUE), ]
+  } else if (choice == 3) {
+    # Sort tasks by Priority Level
+    tasks <- tasks[order(tasks$Priority, decreasing = TRUE), ]
+  } else {
+    cat("Invalid choice! Please enter 1, 2, or 3.\n")
+    return(NULL)
   }
 
   return(tasks)
