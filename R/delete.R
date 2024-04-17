@@ -1,3 +1,8 @@
+#' @title Delete Tasks
+#' @description
+#' @param tasks
+#' @return
+
 delete_task <- function(tasks) {
   repeat {
     # if there are no current tasks
