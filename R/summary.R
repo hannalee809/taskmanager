@@ -1,4 +1,9 @@
-library(ggplot2)
+#' @title Summarize and visualize key information from tasks
+#' @param tasks a dataframe
+#' @returns This function does not return any value, it only prints information
+#' @export
+#' @examples
+#' summary_tasks(df)
 summary_tasks <- function(tasks) {
   cat("Summary of Tasks:\n")
 
@@ -22,7 +27,7 @@ summary_tasks <- function(tasks) {
   cat("\nTask with closest due date:\n")
   print(closest_due_date_task)
 
-  # visualization for priority
+  # visualization for priority (change to ggplot2::)
   priority_plot <- ggplot(tasks, aes(x = Priority)) +
     geom_bar(fill = "skyblue", color = "black") +
     labs(
