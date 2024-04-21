@@ -1,6 +1,5 @@
 delete_task <- function(tasks) {
   repeat {
-    # if there are no current tasks
     if (nrow(tasks) == 0) {
       cat("No tasks to delete.\n")
     }
@@ -8,8 +7,7 @@ delete_task <- function(tasks) {
     cat("Current tasks:\n")
     print(tasks)
 
-    description <-
-      readline(prompt = "Enter the description of the task you want to delete (or type 'done'): ")
+    description <- readline(prompt = "Enter the description of the task you want to delete (or type 'done'): ")
 
     if (tolower(description) == "done") {
       break
