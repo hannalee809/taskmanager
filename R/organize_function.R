@@ -1,7 +1,17 @@
-# @title Organize a given data frame by columns named priority, due date, completion status, or category
+#' @title Organize data frame by columns
+#'
+#' @description Given a data frame, which represents a to do list, organize the
+#' to do tasks by columns named due date, completion status, or category
 #
-# @ description Given a data frame, which represents a to do list, organize the
-# to do tasks by a task's due date, completion status, or category
+#' @param tasks: a data frame representing a list of tasks to do, usually made with add_task function
+#
+#' @returns returns a data frame
+#' @examples
+#' organize(to_do_list)
+#'
+#'           Description   Due_Date Priority Category Completed
+#' 1 finish final project 2024-05-10   High   School     FALSE
+#' @export
 organize <- function(tasks) {
   cat("What do you want to organize by?\n")
   cat("1. Due Date\n")
