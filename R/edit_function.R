@@ -16,19 +16,18 @@
 #' @export ...?
 #'
 #' @examples
-tasks <- data.frame(
-  Description = c("physics hw 1", "physics hw 2", "math 1"),
-  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
-  Priority = c("High", "Medium", "Low"),
-  Category = c("Homework", "Homework", "Assignment"),
-  Completed = c(FALSE, FALSE, TRUE)
-)
+# 'tasks <- data.frame(
+#'  Description = c("physics hw 1", "physics hw 2", "math 1"),
+#'  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
+#'  Priority = c("High", "Medium", "Low"),
+#'  Category = c("Homework", "Homework", "Assignment"),
+#'  Completed = c(FALSE, FALSE, TRUE)
+#' )
 
-tasks <- edit_function(tasks, "Description", "Physics hw 2")
+#' tasks <- edit_function(tasks, "Description", "Physics hw 2")
 #'
 
-
-edit_task <- function(dataframe, column_name, value_name) {
+edit_function <- function(dataframe, column_name, value_name) {
   for(i in 1:nrow(dataframe)){
     if (dataframe[[column_name]][i] == value_name) {
       if (!is.character(dataframe$Description[i])|
