@@ -17,3 +17,51 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(taskmanager)
 ```
+
+The taskmanager package helps a user organize, create, delete, and edit tasks in a data frame representing a list of tasks a user is trying to complete. A user would usually start by creating a list of tasks to complete using the add_task() function
+
+```{r}
+add_task()
+```
+
+The user will be asked the name for the new data frame, which must follow normal name conventions (can't start with number, contain spaces, etc). Then the user will be asked the description for the new task ("finish final project", "do laundry", etc). Then they will be asked when the task is due, using YYYY-MM-DD format. Then they will provide the priority the task holds (High, Medium, Low). Then the user will be asked the category of the task (School, Personal, Health, etc). Finally, the user will be asked if they'd like to add another task. If yes, the user will go through the same steps described above. If no, the user will now see their newly created data frame. 
+To follow along with my examples, enter data_frame for the name of the data frame, "do a backflip" for the description, 2024-05-10 for due date, Low for priority, and Personal for category.
+
+If the user would like to add a task later on, they can call the add_task() function with the data frame they'd like to add a task to in the argument/inside the parenthesis of add_task(). 
+
+```{r}
+add_task(data_frame)
+```
+
+The user should then answer the question asked to add a new task.
+If the user has made a mistake and would like to edit the information of a task, they can use the edit_function() function. The arguments needed are the name of the data frame/task list, the column number of the task you'd like to edit, and the description of the task in quotes "". If the user needs to find this information, then they can view their data frame of tasks to see this.
+
+```{r}
+edit_function(data_frame, 1, "do a backflip")
+```
+
+You can then edit the description, due date, priority, category, and completed status. If you'd like to keep the same information for one of these, simply type in 'keep' to keep the same information.
+
+To delete a task, use the delete_task() function. You have to supply the data frame you'd like to delete task(s) from. 
+
+```{r}
+delete_task(data_frame)
+```
+
+Simply type the description of the task to delete the entire task. No quotations needed "".
+
+To organize your data frame of tasks, you can use the organize() function. 
+
+```{r}
+organize(data_frame)
+```
+
+You will be asked if you'd like to organize the tasks by due date, completion status, category, or priority level. Enter the corresponding number to make your selection (1,2,3,or 4)
+
+If you would like to split a data frame of tasks to create a separate data frame of tasks, use the split_function() function. You have to supply the data frame you'd like to split up, column name, and the name under the column you'd like to split up by in quotes "".
+For this example I added two tasks to a data frame called to_do
+
+```{r}
+split_function(to_do, 1, "high five")
+```
+
