@@ -12,6 +12,9 @@ test_that("summary_tasks correctly outputs num of completed and incomplete tasks
   # test output of complete and incomplete tasks
   expect_output(summary_tasks(sample_tasks), "Number of completed tasks:  1", all = FALSE)
   expect_output(summary_tasks(sample_tasks), "Number of incomplete tasks:  2", all = FALSE)
+})
+
+test_that("summary_tasks correctly outputs num of overdue tasks", {
 
   # test to see if overdue tasks object is accurate
   expect_output(summary_tasks(sample_tasks), "You have 1 overdue tasks:", all = FALSE)
