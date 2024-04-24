@@ -47,7 +47,7 @@ summary_tasks <- function(tasks) {
       readline("Do you want to edit these tasks? (yes/no): ")
 
     if (tolower(response) == "yes") {
-      #edit_tasks(overdue_tasks)
+      tasks <- edit_function(overdue_tasks, "Completed", overdue_tasks$Description[1])
       cat("Edit function will be called.\n")
     } else {
       cat("End of Summary")
