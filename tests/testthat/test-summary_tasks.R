@@ -12,6 +12,6 @@ test_that("summary_tasks correctly outputs num of completed and incomplete tasks
   capture_output(summary_tasks(sample_tasks))
 
   # output of complete and incomplete tasks
-  expect_output("Number of completed tasks: 1")
-  expect_output("Number of incomplete tasks: 2")
+  expect_match(output[1], "Number of completed tasks: 1")
+  expect_match(output[1], "Number of incomplete tasks: 2")
 })
