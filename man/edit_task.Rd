@@ -30,5 +30,4 @@ change is at.
  Completed = c(FALSE, FALSE, TRUE)
 )
 tasks <- edit_function(tasks, "Description", "Physics hw 2")
-
 }

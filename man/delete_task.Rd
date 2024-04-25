@@ -7,7 +7,7 @@
 delete_task(tasks)
 }
 \arguments{
-\item{tasks}{}
+\item{tasks}{the name of the data frame}
 }
 \value{
 An updated tasks data frame that does not include the deleted tasks
