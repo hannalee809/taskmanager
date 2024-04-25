@@ -5,8 +5,7 @@
 #' @importFrom dplyr filter
 #' @export
 #' @examples
-#' summary_tasks(df)
-
+#' summary_tasks(tasks)
 summary_tasks <- function(tasks) {
   cat("Summary of Tasks:\n\n")
 
@@ -21,7 +20,7 @@ summary_tasks <- function(tasks) {
 
   # tasks with highest priority
   # tasks$Priority <- factor(tasks$Priority, levels = c("High", "Medium", "Low"))
-  higest_priority <- dplyr::filter(tasks, Priority == "High")
+  highest_priority <- dplyr::filter(tasks, Priority == "High")
   print(highest_priority)
 
   # tasks with closest due date
@@ -34,8 +33,7 @@ summary_tasks <- function(tasks) {
   # checks whether you have any complete or incomplete tasks
   current_time <- Sys.Date()
 
-  overdue_tasks <- tasks %>%
-    filter(Due_Date < current_time)
+  overdue_tasks <- dplyr::filter(tasks, Due_Date < current_time)
 
   if (nrow(overdue_tasks) > 0) {
     cat("You have", nrow(overdue_tasks), "overdue tasks:\n")
@@ -71,4 +69,5 @@ summary_tasks <- function(tasks) {
 
   # print(priority_plot)
 }
+
 

@@ -7,7 +7,7 @@
 organize_tasks(tasks)
 }
 \arguments{
-\item{tasks:}{a data frame representing a list of tasks to do, usually made with add_task function}
+\item{tasks}{a data frame representing a list of tasks to do, usually made with add_task function}
 }
 \value{
 returns a data frame

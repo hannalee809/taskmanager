@@ -16,5 +16,5 @@ This function does not return any value, it only prints information
 Summarize and visualize key information from tasks
 }
 \examples{
-summary_tasks(df)
+summary_tasks(tasks)
 }

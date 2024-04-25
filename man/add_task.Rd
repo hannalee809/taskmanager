@@ -7,7 +7,7 @@
 add_task(df = NULL)
 }
 \arguments{
-\item{df:}{can be NULL, represents a data frame the user wants to add a task to}
+\item{df}{can be NULL, represents a data frame the user wants to add a task to}
 }
 \value{
 returns a data frame
