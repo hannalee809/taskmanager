@@ -20,7 +20,7 @@ library(taskmanager)
 
 The taskmanager package helps a user organize, create, delete, and edit tasks in a data frame representing a list of tasks a user is trying to complete. A user would usually start by creating a list of tasks to complete using the add_task() function
 
-```{r}
+```{r, eval=FALSE}
 add_task()
 ```
 
@@ -29,14 +29,14 @@ To follow along with my examples, enter data_frame for the name of the data fram
 
 If the user would like to add a task later on, they can call the add_task() function with the data frame they'd like to add a task to in the argument/inside the parenthesis of add_task(). 
 
-```{r}
+```{r, eval=FALSE}
 add_task(data_frame)
 ```
 
 The user should then answer the question asked to add a new task.
 If the user has made a mistake and would like to edit the information of a task, they can use the edit_function() function. The arguments needed are the name of the data frame/task list, the column number of the task you'd like to edit, and the description of the task in quotes "". If the user needs to find this information, then they can view their data frame of tasks to see this.
 
-```{r}
+```{r, eval=FALSE}
 edit_function(data_frame, 1, "do a backflip")
 ```
 
@@ -44,7 +44,7 @@ You can then edit the description, due date, priority, category, and completed s
 
 To delete a task, use the delete_task() function. You have to supply the data frame you'd like to delete task(s) from. 
 
-```{r}
+```{r, eval=FALSE}
 delete_task(data_frame)
 ```
 
@@ -52,7 +52,7 @@ Simply type the description of the task to delete the entire task. No quotations
 
 To organize your data frame of tasks, you can use the organize() function. 
 
-```{r}
+```{r, eval=FALSE}
 organize(data_frame)
 ```
 
@@ -61,7 +61,7 @@ You will be asked if you'd like to organize the tasks by due date, completion st
 If you would like to split a data frame of tasks to create a separate data frame of tasks, use the split_function() function. You have to supply the data frame you'd like to split up, column name, and the name under the column you'd like to split up by in quotes "".
 For this example I added two tasks to a data frame called to_do
 
-```{r}
+```{r, eval=FALSE}
 split_function(to_do, 1, "high five")
 ```
 

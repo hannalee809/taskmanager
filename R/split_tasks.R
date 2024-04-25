@@ -10,7 +10,7 @@
 #'
 #' @returns This function returns a new data frame under the desired params.
 #'
-#' @exports ...?
+#' @export
 #'
 #' @examples
 #'

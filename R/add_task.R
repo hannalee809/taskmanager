@@ -2,7 +2,7 @@
 #'
 #' @description Creates a data frame for a user to then input tasks. If data frame supplied in parameters, then allows the user to add tasks to that data frame
 #
-#' @param df: can be NULL, represents a data frame the user wants to add a task to
+#' @param df can be NULL, represents a data frame the user wants to add a task to
 #
 #' @returns returns a data frame
 #' @examples

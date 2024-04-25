@@ -3,7 +3,7 @@
 #' @description Given a data frame, which represents a to do list, organize the
 #' to do tasks by columns named due date, completion status, or category
 #
-#' @param tasks: a data frame representing a list of tasks to do, usually made with add_task function
+#' @param tasks a data frame representing a list of tasks to do, usually made with add_task function
 #
 #' @returns returns a data frame
 #' @examples

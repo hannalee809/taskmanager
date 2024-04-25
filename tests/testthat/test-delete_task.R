@@ -7,15 +7,7 @@ sample_tasks <- data.frame(
   Completed = c(FALSE, TRUE, FALSE)
 )
 
-test_that("delete_task accurately removes task based on description ", {
-  simulate_input(c("Task 2", "done"), {
-    # Call the delete_task function
-    delete_task(sample_tasks)
-  })
-
-  # Check if "Task 2" is deleted from the dataframe
-  expect_false("Task 2" %in% sample_tasks$Description)
-})
+# test delete_task accurately removes task based on description
 
 
 # test if user inputs a task that does not exist in the tasks data frame

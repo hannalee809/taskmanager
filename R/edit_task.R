@@ -13,20 +13,17 @@
 #' needed by typing in "keep", and if the user tries to input a value that does
 #' not align with each column's params, a warning is issued.
 #'
-#' @export ...?
+#' @export
 #'
 #' @examples
-# 'tasks <- data.frame(
+# tasks <- data.frame(
 #'  Description = c("physics hw 1", "physics hw 2", "math 1"),
 #'  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
 #'  Priority = c("High", "Medium", "Low"),
 #'  Category = c("Homework", "Homework", "Assignment"),
 #'  Completed = c(FALSE, FALSE, TRUE)
 #' )
-
 #' tasks <- edit_function(tasks, "Description", "Physics hw 2")
-#'
-
 edit_task <- function(dataframe, column_name, value_name) {
   for(i in 1:nrow(dataframe)){
     if (dataframe[[column_name]][i] == value_name) {
@@ -52,5 +49,5 @@ edit_task <- function(dataframe, column_name, value_name) {
   }
   return(dataframe)
 }
-
-sample_data <- edit_function(sample_data, "Description", "Project 3")
+#
+# sample_data <- edit_task(sample_data, "Description", "Project 3")

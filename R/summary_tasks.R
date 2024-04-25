@@ -1,10 +1,12 @@
 #' @title Summarize and visualize key information from tasks
 #' @param tasks a dataframe
 #' @returns This function does not return any value, it only prints information
+#'
+#' @importFrom dplyr filter
 #' @export
 #' @examples
 #' summary_tasks(df)
-library(dplyr)
+
 summary_tasks <- function(tasks) {
   cat("Summary of Tasks:\n\n")
 
@@ -19,9 +21,7 @@ summary_tasks <- function(tasks) {
 
   # tasks with highest priority
   # tasks$Priority <- factor(tasks$Priority, levels = c("High", "Medium", "Low"))
-  highest_priority <- tasks %>%
-    filter(Priority == "High")
-  cat("Your highest priority tasks: \n")
+  higest_priority <- dplyr::filter(tasks, Priority == "High")
   print(highest_priority)
 
   # tasks with closest due date
@@ -47,7 +47,7 @@ summary_tasks <- function(tasks) {
       readline("Do you want to edit these tasks? (yes/no): ")
 
     if (tolower(response) == "yes") {
-      tasks <- edit_function(overdue_tasks, "Completed", overdue_tasks$Description[1])
+      # tasks <- edit_function(overdue_tasks, "Completed", overdue_tasks$Description[1])
       cat("Edit function will be called.\n")
     } else {
       cat("End of Summary")

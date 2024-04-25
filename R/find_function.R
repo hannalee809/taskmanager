@@ -12,10 +12,10 @@
 #' @returns A string that explains where the phrase is found and what the full
 #' phrase is.
 #'
-#' @export ...?
+#' @export
 #'
 #' @examples
-#' 'tasks <- data.frame(
+#' tasks <- data.frame(
 #'  Description = c("physics hw 1", "physics hw 2", "math 1"),
 #'  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
 #'  Priority = c("High", "Medium", "Low"),
@@ -40,5 +40,5 @@ find_task <- function (dataframe, phrase) {
   }
 }
 
-find_task (sample_data, "Wow")
+# find_task (sample_data, "Wow")
 

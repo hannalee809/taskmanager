@@ -1,6 +1,6 @@
 #' @title Delete specific tasks from data frame
 #'
-#' @param tasks
+#' @param tasks the name of the data frame
 #'
 #' @return An updated tasks data frame that does not include the deleted tasks
 #'
