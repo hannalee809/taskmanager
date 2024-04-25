@@ -1,4 +1,4 @@
-#' @title The edit function
+#' @title The Edit function
 #' @description
 #' The user inputs their desired dataframe they want to edit, and the function
 #' finds it by taking in the column name and value that the row they want to
@@ -39,7 +39,8 @@ edit_function <- function(dataframe, column_name, value_name) {
         warning("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in date form, and completion must be TRUE or FALSE")
       } else {
         for (j in 1:ncol(dataframe)) {
-          new_val <- readline(prompt = paste("What do you want to change the", names(dataframe)[j], "to? If you would like to keep the information as is, type the word 'keep' "))
+          print(readline(promt = paste("If you would like to keep the information as is, type the word keep")))
+          new_val <- readline(prompt = paste("What do you want to change the", names(dataframe)[j], "to? "))
           if (new_val == "keep") {
             dataframe[[j]][i] <- dataframe[[j]][i]
           } else {
@@ -52,3 +53,4 @@ edit_function <- function(dataframe, column_name, value_name) {
   return(dataframe)
 }
 
+sample_data <- edit_function(sample_data, "Description", "Project 3")
