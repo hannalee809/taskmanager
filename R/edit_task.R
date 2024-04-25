@@ -27,7 +27,7 @@
 #' tasks <- edit_function(tasks, "Description", "Physics hw 2")
 #'
 
-edit_function <- function(dataframe, column_name, value_name) {
+edit_task <- function(dataframe, column_name, value_name) {
   for(i in 1:nrow(dataframe)){
     if (dataframe[[column_name]][i] == value_name) {
       if (!is.character(dataframe$Description[i])|

@@ -12,7 +12,7 @@
 #'           Description   Due_Date Priority Category Completed
 #' 1 finish final project 2024-05-10   High   School     FALSE
 #' @export
-organize <- function(tasks) {
+organize_tasks <- function(tasks) {
   cat("What do you want to organize by?\n")
   cat("1. Due Date\n")
   cat("2. Completion Status\n")

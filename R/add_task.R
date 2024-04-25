@@ -41,7 +41,7 @@ add_task <- function(df = NULL) {
   repeat {
     cat("Enter details for the new task:\n")
     description <- readline(prompt = "Description: ")
-    due_date <- readline(prompt = "Due Date (YYYY-MM-DD): ")
+    due_date <- readline(prompt = "Due Date (MM-DD-YYYY): ")
     priority <- readline(prompt = "Priority (High/Medium/Low): ")
     category <- readline(prompt = "Category: ")
 

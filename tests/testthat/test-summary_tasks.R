@@ -8,10 +8,11 @@ sample_tasks <- data.frame(
 )
 
 test_that("summary_tasks correctly outputs num of completed and incomplete tasks", {
-  # Call the summary_tasks function with sample data
-  capture_output(summary_tasks(sample_tasks))
 
-  # output of complete and incomplete tasks
-  expect_output("Number of completed tasks: 1")
-  expect_output("Number of incomplete tasks: 2")
+  # test output of complete and incomplete tasks
+  expect_output(summary_tasks(sample_tasks), "Number of completed tasks:  1", all = FALSE)
+  expect_output(summary_tasks(sample_tasks), "Number of incomplete tasks:  2", all = FALSE)
+
+  # test to see if overdue tasks object is accurate
+  expect_output(summary_tasks(sample_tasks), "You have 1 overdue tasks:", all = FALSE)
 })
