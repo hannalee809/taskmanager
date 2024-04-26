@@ -40,5 +40,4 @@ find_task <- function (dataframe, phrase) {
   }
 }
 
-# find_task (sample_data, "Wow")
 

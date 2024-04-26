@@ -24,6 +24,10 @@
 #'  Completed = c(FALSE, FALSE, TRUE)
 #' )
 #' tasks <- edit_function(tasks, "Description", "Physics hw 2")
+
+
+# update this so that it uses find, and it returns the row instead of having to
+# put the column name in it.
 edit_task <- function(dataframe, column_name, value_name) {
   for(i in 1:nrow(dataframe)){
     if (dataframe[[column_name]][i] == value_name) {
@@ -32,11 +36,11 @@ edit_task <- function(dataframe, column_name, value_name) {
           !(dataframe$Priority[i] %in% c("High", "Medium", "Low")) |
           !(dataframe$Completed[i] == TRUE | dataframe$Completed[i] == FALSE)|
           !isTRUE(all(suppressWarnings(!is.na(as.Date(dataframe$Due_Date[i], "%Y-%m-%d")))))
-      ){
-        warning("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in date form, and completion must be TRUE or FALSE")
+      ) {
+        warning("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in %Y-%m-%d form, and completion must be (capitalized) TRUE or FALSE")
       } else {
+        cat("If you would like to keep the information as is, type the word keep")
         for (j in 1:ncol(dataframe)) {
-          print(readline(promt = paste("If you would like to keep the information as is, type the word keep")))
           new_val <- readline(prompt = paste("What do you want to change the", names(dataframe)[j], "to? "))
           if (new_val == "keep") {
             dataframe[[j]][i] <- dataframe[[j]][i]
@@ -49,5 +53,13 @@ edit_task <- function(dataframe, column_name, value_name) {
   }
   return(dataframe)
 }
-#
-# sample_data <- edit_task(sample_data, "Description", "Project 3")
+
+tasks <- data.frame(
+  Description = c("physics hw 1", "physics hw 2", "math 1"),
+  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
+  Priority = c("High", "Medium", "Low"),
+  Category = c("Homework", "Homework", "Assignment"),
+  Completed = c(FALSE, FALSE, TRUE)
+ )
+tasks <- edit_task(tasks, "Description", "math 1")
+sample_data <- edit_task(sample_data, "Description", "Project 3")
