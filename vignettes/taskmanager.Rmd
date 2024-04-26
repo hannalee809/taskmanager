@@ -65,3 +65,9 @@ For this example I added two tasks to a data frame called to_do
 split_function(to_do, 1, "high five")
 ```
 
+The last function to use is the summary_tasks() function. This function allows you to see a general summary of your task data frame. This will be helpful when you have really long task data frames. You will be able to see a summary of how many tasks the data frame has, how many tasks you have completed and not completed, your highest priority tasks, your tasks with the closest due date, and your overdue tasks. You will be asked if you'd like to edit the overdue tasks, you can say yes or no.
+
+```{r}
+summary_tasks(to_do_task_list)
+```
+
