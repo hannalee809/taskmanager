@@ -26,12 +26,12 @@
 #' tasks <- find_task(tasks, "hw")
 
 
-
-
 # given a data frame and a phrase, it returns all rows and position/indexes
-# of occurrences
+# of occurrences. Not case sensitive.
 find_task <- function (dataframe, phrase) {
-  list_tf <- grep(phrase, dataframe$Description)
+  new_phrase <- tolower(phrase)
+  new_desc <- tolower(dataframe$Description)
+  list_tf <- grep(new_phrase, new_desc)
   for (i in list_tf) {
     cat("An occurance of '", phrase, "' occured at row ", i, ": ", dataframe$Description[i], "\n", sep = "")
   }
