@@ -17,32 +17,44 @@
 #' )
 
 #' delete_task(tasks)
-delete_task <- function(tasks) {
+delete_task <- function(tasks, description_name = NULL) {
   repeat {
     if (nrow(tasks) == 0) {
       cat("No tasks to delete.\n")
     }
 
-    cat("Current tasks:\n")
-    print(tasks)
-
-    description <- readline(prompt = "Enter the description of the task you want to delete (or type 'done'): ")
+    # if/else to determine whether to delete task automatically (if called to
+    # argument) or to ask what task to delete
+    if (!is.null(description_name)) {
+      tasks <- tasks[tasks$Description != description_name, ]
+      cat("Task with description '",
+          description_name,
+          "' deleted.\n")
+      description <-
+        readline(prompt = "Would you like to delete another task? Enter task name to delete (or type 'done'): ")
+    } else {
+      cat("Current tasks:\n")
+      print(tasks)
+      description <-
+        readline(prompt = "Enter the description of the task you want to delete (or type 'done'): ")
+    }
 
     if (tolower(description) == "done") {
       break
     }
 
-    task_to_delete <- tasks[tasks$Description == description,]
+    task_to_delete <- tasks[tasks$Description == description, ]
 
     if (nrow(task_to_delete) == 0) {
       cat("Task not found.\n")
     } else {
-      tasks <- tasks[tasks$Description != description,]
+      tasks <- tasks[tasks$Description != description, ]
       cat("Task deleted successfully.\n")
     }
   }
 
-  new_df_name <- readline(prompt = "What would you like your dataframe name to be? ")
+  new_df_name <-
+    readline(prompt = "What would you like your dataframe name to be? ")
   assign(new_df_name, tasks, envir = .GlobalEnv)
   cat("Done!")
 }
