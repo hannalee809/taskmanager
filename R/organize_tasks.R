@@ -3,7 +3,10 @@
 #' @description Given a data frame, which represents a to do list, organize the
 #' to do tasks by columns named due date, completion status, or category
 #
-#' @param tasks a data frame representing a list of tasks to do, usually made with add_task function
+#' @param tasks a data frame representing a list of tasks to do, usually made
+#'   with add_task function
+#' @param choice can be NULL, or 1,2,3, or 4. Represents what the user would like to choose to organize by
+#'
 #
 #' @returns returns a data frame
 #' @examples
@@ -12,14 +15,12 @@
 #'           Description   Due_Date Priority Category Completed
 #' 1 finish final project 2024-05-10   High   School     FALSE
 #' @export
-organize_tasks <- function(tasks) {
-  cat("What do you want to organize by?\n")
-  cat("1. Due Date\n")
-  cat("2. Completion Status\n")
-  cat("3. Category\n")
-  cat("4. Priority Level\n")
-
-  choice <- as.integer(readline(prompt = "Enter your choice (1/2/3/4): "))
+organize_tasks <- function(tasks, choice = NULL) {
+  # Check if the choice is provided by the user
+  if (is.null(choice)) {
+    # If choice is not provided, ask the user for input
+    choice <- as.integer(readline(prompt = "Organize by due date, completion status, category, or priority (1/2/3/4): "))
+  }
 
   if (choice == 1) {
     # Sort tasks by Due_Date
