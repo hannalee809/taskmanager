@@ -4,10 +4,13 @@
 \alias{organize_tasks}
 \title{Organize data frame by columns}
 \usage{
-organize_tasks(tasks)
+organize_tasks(tasks, choice = NULL)
 }
 \arguments{
-\item{tasks}{a data frame representing a list of tasks to do, usually made with add_task function}
+\item{tasks}{a data frame representing a list of tasks to do, usually made
+with add_task function}
+
+\item{choice}{can be NULL, or 1,2,3, or 4. Represents what the user would like to choose to organize by}
 }
 \value{
 returns a data frame

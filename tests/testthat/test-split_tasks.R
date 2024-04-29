@@ -7,9 +7,13 @@ sample_tasks <- data.frame(
   Completed = c(FALSE, TRUE, FALSE)
 )
 
-test_that("split task correct split tasks based on category 'Priority'", {
-  split_tasks(sample_tasks, "Priority", "High")
-  expect_equal(nrow(result), 2)
+test_that("split_tasks correctly split tasks based on category 'Priority'", {
+  split_tasks(sample_tasks, "Priority", "High", "result_df")
+  expect_equal(nrow(result_df), 2)
+})
+
+test_that("split_tasks correctly identifies incorrect user inputs in category name", {
+  expect_error(split_tasks(sample_tasks, "High", "WRONGINPUT"))
 })
 
 
