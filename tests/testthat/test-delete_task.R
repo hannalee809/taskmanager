@@ -14,4 +14,4 @@ test_that("delete_task correctly deletes a task by description", {
   expect_false("Task 1" %in% sample_tasks$Description)
 })
 # test if user inputs a task that does not exist in the tasks data frame
-test_that("delete_tasks ")
+
