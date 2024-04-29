@@ -55,19 +55,6 @@ summary_tasks <- function(tasks) {
     cat("You have no overdue tasks.\n")
   }
 
-
-
-  # # visualization for priority (change to ggplot2::)
-  # priority_plot <- ggplot(tasks, aes(x = Priority)) +
-  #   geom_bar(fill = "skyblue", color = "black") +
-  #   labs(
-  #     title = "Distribution of Task Priorities",
-  #     x = "Task Priority",
-  #     y = "Number of tasks"
-  #   ) +
-  #   theme_minimal()
-
-  # print(priority_plot)
 }
 
 
