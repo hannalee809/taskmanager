@@ -10,7 +10,7 @@ delete_task(tasks, description_name = NULL)
 \item{tasks}{the name of the data frame}
 }
 \value{
-An updated tasks data frame that does not include the deleted tasks
+An updated_tasks data frame that does not include the deleted tasks
 }
 \description{
 Delete specific tasks from data frame

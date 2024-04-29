@@ -1,4 +1,4 @@
-#' @title The split function
+#' @title The split_tasks function
 #'
 #' @description
 #' A function where the user inputs what data frame they want to split and by
@@ -22,11 +22,11 @@
 #'  Completed = c(FALSE, FALSE, TRUE)
 #' )
 
-#' split_function(tasks, "Category", "Homework")
+#' split_tasks(tasks, "Category", "Homework")
 #'
 
 
-split_function <- function(dataframe, column_name, cat_name) {
+split_tasks <- function(dataframe, column_name, cat_name) {
   new_df_name <- readline(prompt = "What would you like your dataframe name to be? ")
   result <- dataframe[dataframe[, column_name] == cat_name, ]
   assign(new_df_name, result, envir = .GlobalEnv)
