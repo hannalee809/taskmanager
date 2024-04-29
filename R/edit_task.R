@@ -54,12 +54,12 @@ edit_task <- function(dataframe, column_name, value_name) {
   return(dataframe)
 }
 
-tasks <- data.frame(
-  Description = c("physics hw 1", "physics hw 2", "math 1"),
-  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
-  Priority = c("High", "Medium", "Low"),
-  Category = c("Homework", "Homework", "Assignment"),
-  Completed = c(FALSE, FALSE, TRUE)
- )
-tasks <- edit_task(tasks, "Description", "math 1")
-sample_data <- edit_task(sample_data, "Description", "Project 3")
+# tasks <- data.frame(
+#   Description = c("physics hw 1", "physics hw 2", "math 1"),
+#   Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
+#   Priority = c("High", "Medium", "Low"),
+#   Category = c("Homework", "Homework", "Assignment"),
+#   Completed = c(FALSE, FALSE, TRUE)
+#  )
+# tasks <- edit_task(tasks, "Description", "math 1")
+# sample_data <- edit_task(sample_data, "Description", "Project 3")

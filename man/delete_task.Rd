@@ -4,7 +4,7 @@
 \alias{delete_task}
 \title{Delete specific tasks from data frame}
 \usage{
-delete_task(tasks)
+delete_task(tasks, description_name = NULL)
 }
 \arguments{
 \item{tasks}{the name of the data frame}
