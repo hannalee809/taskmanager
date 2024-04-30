@@ -4,10 +4,10 @@
 \alias{split_tasks}
 \title{The split_tasks function}
 \usage{
-split_tasks(dataframe, column_name, cat_name, new_df_name = NULL)
+split_tasks(dataframe, column_name, value_name, new_df_name = NULL)
 }
 \arguments{
-\item{dataframe, column_name, cat_name, new_df_name}{the data frame being split up,
+\item{dataframe, column_name, value_name, new_df_name}{the data frame being split up,
 and under what column name and specific value(s) that are wanted to be
 rounded up into a new data frame, the name of the new data frame.}
 }
