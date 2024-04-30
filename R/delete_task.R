@@ -7,15 +7,6 @@
 #' @export
 #'
 #' @examples
-#'
-#' tasks <- data.frame(
-#'  Description = c("physics hw 1", "physics hw 2", "math 1"),
-#'  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
-#'  Priority = c("High", "Medium", "Low"),
-#'  Category = c("Homework", "Homework", "Assignment"),
-#'  Completed = c(FALSE, FALSE, TRUE)
-#' )
-
 #' delete_task(tasks)
 delete_task <- function(tasks, description_name = NULL) {
   if (nrow(tasks) == 0) {
