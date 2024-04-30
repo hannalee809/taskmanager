@@ -1,12 +1,11 @@
 #' @title The Edit function
 #' @description
-#' The user inputs their desired dataframe they want to edit, and the function
-#' finds it by taking in the column name and value that the row they want to
-#' change is at.
+#' The user inputs their desired data frame they want to edit, and the function
+#' finds it by taking in the row number and returning options to edit the whole
+#' row.
 #'
-#' @param dataframe,column_name,value_name These inuputs are all required so
-#' that the function can find the correct row. It is prefered that column_name is
-#' the description column and value_name is a unique description name.
+#' @param dataframe,row_number, These inputs are all required so
+#' that the function can edit the correct row.
 #'
 #' @returns Outputs a readline where the user gets to input new values if needed
 #' in their desired data frame. There is an option to "keep" the old values if
@@ -23,43 +22,20 @@
 #'  Category = c("Homework", "Homework", "Assignment"),
 #'  Completed = c(FALSE, FALSE, TRUE)
 #' )
-#' tasks <- edit_function(tasks, "Description", "Physics hw 2")
+#' tasks <- edit_function(tasks, 2)
 
-
-# update this so that it uses find, and it returns the row instead of having to
-# put the column name in it.
-edit_task <- function(dataframe, column_name, value_name) {
-  for(i in 1:nrow(dataframe)){
-    if (dataframe[[column_name]][i] == value_name) {
-      if (!is.character(dataframe$Description[i])|
-          !is.character(dataframe$Category[i])|
-          !(dataframe$Priority[i] %in% c("High", "Medium", "Low")) |
-          !(dataframe$Completed[i] == TRUE | dataframe$Completed[i] == FALSE)|
-          !isTRUE(all(suppressWarnings(!is.na(as.Date(dataframe$Due_Date[i], "%Y-%m-%d")))))
-      ) {
-        warning("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in %Y-%m-%d form, and completion must be (capitalized) TRUE or FALSE")
-      } else {
-        cat("If you would like to keep the information as is, type the word keep")
-        for (j in 1:ncol(dataframe)) {
-          new_val <- readline(prompt = paste("What do you want to change the", names(dataframe)[j], "to? "))
-          if (new_val == "keep") {
-            dataframe[[j]][i] <- dataframe[[j]][i]
-          } else {
-            dataframe[[j]][i] <- new_val
-          }
-        }
-      }
+edit_task <- function(dataframe, row_number) {
+  print(dataframe[row_number,])
+  cat("If you would like to keep the information as is, type the word keep")
+  cat("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in %Y-%m-%d form, and completion must be (capitalized) TRUE or FALSE")
+  for (i in 1:ncol(dataframe[row_number,])) {
+    new_val <- readline(prompt = paste("What do you want to change the", names(dataframe)[i], "to? "))
+    if (new_val == "keep") {
+      dataframe[row_number, ][i] <- dataframe[row_number, ][i]
+      print(dataframe[row_number, ][i])
+    } else {
+      dataframe[row_number, ][i] <- new_val
+      print(dataframe[row_number, ][i])
     }
   }
-  return(dataframe)
 }
-
-# tasks <- data.frame(
-#   Description = c("physics hw 1", "physics hw 2", "math 1"),
-#   Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
-#   Priority = c("High", "Medium", "Low"),
-#   Category = c("Homework", "Homework", "Assignment"),
-#   Completed = c(FALSE, FALSE, TRUE)
-#  )
-# tasks <- edit_task(tasks, "Description", "math 1")
-# sample_data <- edit_task(sample_data, "Description", "Project 3")
