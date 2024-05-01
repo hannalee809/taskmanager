@@ -60,5 +60,18 @@ split_tasks(tasks_df, column_num, "task_desc_under_column_num")
 summary_tasks(tasks_df)
 ```
 
+add_task() can take the input of a df of a task list
+
+delete_task() takes in the name of the df of a task list
+
+edit_task() takes in the name of the df of a task list, the column number of the task you'd like to edit, and the task description in "quotes"
+
+find_task() takes in the name of the df of a task list and the description of the task in "quotes"
+
+organize_tasks() takes in the name of the df of a task list
+
+split_tasks() takes in the name of the df of a task list, the column you'd like to split by, and the description of the task below the column you'd like to split by in quotes.
+
+summary_tasks() takes in the name of the df of a task list
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
