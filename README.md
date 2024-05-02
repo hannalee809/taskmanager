@@ -4,6 +4,8 @@
 # taskmanager
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/hannalee809/taskmanager/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hannalee809/taskmanager/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 taskmanager allows users to create, edit, and organize a list of tasks a
@@ -20,13 +22,13 @@ devtools::install_github("hannalee809/taskmanager")
 #> Downloading GitHub repo hannalee809/taskmanager@HEAD
 #> 
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/34/18r5lhrj0_31n6492m63t1t40000gn/T/Rtmp9SGjXa/remotes1f507b66e67e/hannalee809-taskmanager-1961b47/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/v0/nylh99qn4fj81nm7t9c2bp700000gp/T/RtmpWEq9mZ/remotes10c28bc26941/hannalee809-taskmanager-8ac0b18/DESCRIPTION’ ... OK
 #> * preparing ‘taskmanager’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> * building ‘taskmanager_0.0.0.9000.tar.gz’
-#> Installing package into '/private/var/folders/34/18r5lhrj0_31n6492m63t1t40000gn/T/Rtmp1jDYYv/temp_libpath1e0d47dcef73'
+#> Installing package into '/private/var/folders/v0/nylh99qn4fj81nm7t9c2bp700000gp/T/RtmpIcGcol/temp_libpathfdfc2f5aa31b'
 #> (as 'lib' is unspecified)
 ```
 
@@ -44,7 +46,6 @@ You can delete, edit, organize, summarize, split, and find a task with
 the functions below:
 
 ``` r
-
 # add task to existing data frame
 add_task(tasks_df)
 

@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # taskmanager
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/hannalee809/taskmanager/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hannalee809/taskmanager/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 taskmanager allows users to create, edit, and organize a list of tasks a user aims to complete. It's similar to a to do list.
