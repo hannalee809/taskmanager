@@ -4,12 +4,11 @@
 \alias{edit_task}
 \title{The Edit function}
 \usage{
-edit_task(dataframe, column_name, value_name)
+edit_task(dataframe, row_number)
 }
 \arguments{
-\item{dataframe, column_name, value_name}{These inuputs are all required so
-that the function can find the correct row. It is prefered that column_name is
-the description column and value_name is a unique description name.}
+\item{dataframe, row_number, }{These inputs are all required so
+that the function can edit the correct row.}
 }
 \value{
 Outputs a readline where the user gets to input new values if needed
@@ -18,16 +17,10 @@ needed by typing in "keep", and if the user tries to input a value that does
 not align with each column's params, a warning is issued.
 }
 \description{
-The user inputs their desired dataframe they want to edit, and the function
-finds it by taking in the column name and value that the row they want to
-change is at.
+The user inputs their desired data frame they want to edit, and the function
+finds it by taking in the row number and returning options to edit the whole
+row.
 }
 \examples{
- Description = c("physics hw 1", "physics hw 2", "math 1"),
- Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
- Priority = c("High", "Medium", "Low"),
- Category = c("Homework", "Homework", "Assignment"),
- Completed = c(FALSE, FALSE, TRUE)
-)
-tasks <- edit_function(tasks, "Description", "Physics hw 2")
+tasks <- edit_function(tasks, 2)
 }

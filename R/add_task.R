@@ -5,10 +5,9 @@
 #' @param df can be NULL, represents a data frame the user wants to add a task to
 #
 #' @returns returns a data frame
+#' @export
 #' @examples
 #' add_task()
-#' add_task(to_do_list)
-#' @export
 add_task <- function(df = NULL) {
   # Check if df argument is provided
   if (is.null(df)) {

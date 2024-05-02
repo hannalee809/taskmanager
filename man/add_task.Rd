@@ -16,6 +16,5 @@ returns a data frame
 Creates a data frame for a user to then input tasks. If data frame supplied in parameters, then allows the user to add tasks to that data frame
 }
 \examples{
-add_task()
-add_task(to_do_list)
+add_task(df)
 }

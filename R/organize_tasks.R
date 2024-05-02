@@ -6,15 +6,10 @@
 #' @param tasks a data frame representing a list of tasks to do, usually made
 #'   with add_task function
 #' @param choice can be NULL, or 1,2,3, or 4. Represents what the user would like to choose to organize by
-#'
-#
 #' @returns returns a data frame
+#' @export
 #' @examples
 #' organize(to_do_list)
-#'
-#'           Description   Due_Date Priority Category Completed
-#' 1 finish final project 2024-05-10   High   School     FALSE
-#' @export
 organize_tasks <- function(tasks, choice = NULL) {
   # Check if the choice is provided by the user
   if (is.null(choice)) {

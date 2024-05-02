@@ -21,7 +21,4 @@ to do tasks by columns named due date, completion status, or category
 }
 \examples{
 organize(to_do_list)
-
-          Description   Due_Date Priority Category Completed
-1 finish final project 2024-05-10   High   School     FALSE
 }
