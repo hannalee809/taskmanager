@@ -7,7 +7,10 @@
 #' @returns returns a data frame
 #' @export
 #' @examples
-#' add_task()
+#' if (interactive()) {
+#'   add_task()
+#' }
+#'
 add_task <- function(df = NULL) {
   # Check if df argument is provided
   if (is.null(df)) {
