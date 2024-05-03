@@ -13,6 +13,5 @@ test_that("delete_task correctly deletes a task by description", {
 })
 
 test_that("delete_task indicates that a task does not exist in the tasks data frame", {
- expect_error(delete_task(sample_tasks, "Task 10"))
+  expect_error(delete_task(sample_tasks, "Task 10"))
 })
-

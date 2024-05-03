@@ -15,4 +15,3 @@ test_that("edit_task prints out correct row of df when user calls function", {
   expect_output(edit_task(sample_tasks, 1), " Description   Due_Date Priority Category Completed
 1      Task 1 04-21-2024   Medium      SDS     FALSE", all = FALSE)
 })
-

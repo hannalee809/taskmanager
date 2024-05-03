@@ -8,11 +8,11 @@
 #'
 #' @examples
 #' tasks <- data.frame(
-#' Description = c("Task 1", "Task 2", "Task 3"),
-#' Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
-#' Priority = c("Medium", "High", "Low"),
-#' Category = c("SDS", "PSY", "CSC"),
-#' Completed = c(FALSE, TRUE, FALSE)
+#'   Description = c("Task 1", "Task 2", "Task 3"),
+#'   Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+#'   Priority = c("Medium", "High", "Low"),
+#'   Category = c("SDS", "PSY", "CSC"),
+#'   Completed = c(FALSE, TRUE, FALSE)
 #' )
 #'
 #' if (interactive()) {
@@ -31,9 +31,11 @@ delete_task <- function(tasks, description_name = NULL) {
       stop("Task not found.")
     } else {
       tasks <- tasks[tasks$Description != description_name, ]
-      cat("Task with description '",
-          description_name,
-          "' deleted.\n")
+      cat(
+        "Task with description '",
+        description_name,
+        "' deleted.\n"
+      )
     }
   } else {
     cat("Current tasks:\n")

@@ -22,14 +22,12 @@ devtools::install_github("hannalee809/taskmanager")
 #> Downloading GitHub repo hannalee809/taskmanager@HEAD
 #> 
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/v0/nylh99qn4fj81nm7t9c2bp700000gp/T/RtmpWEq9mZ/remotes10c28bc26941/hannalee809-taskmanager-8ac0b18/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/v0/nylh99qn4fj81nm7t9c2bp700000gp/T/RtmpBEIZAU/remotes141a7634b4f09/hannalee809-taskmanager-337d757/DESCRIPTION’ ... OK
 #> * preparing ‘taskmanager’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> * building ‘taskmanager_0.0.0.9000.tar.gz’
-#> Installing package into '/private/var/folders/v0/nylh99qn4fj81nm7t9c2bp700000gp/T/RtmpIcGcol/temp_libpathfdfc2f5aa31b'
-#> (as 'lib' is unspecified)
 ```
 
 ## Example

@@ -28,7 +28,7 @@
 #' }
 #'
 # given a data frame and a phrase, it returns all rows and position/indexes
-# of occurrences. Not case sensitive.
+# of occurrences. It is not case sensitive.
 find_task <- function (dataframe, phrase) {
   new_phrase <- tolower(phrase)
   new_desc <- tolower(dataframe$Description)

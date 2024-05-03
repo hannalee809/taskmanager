@@ -14,20 +14,18 @@
 #'
 #' @examples
 #' tasks <- data.frame(
-#' Description = c("Task 1", "Task 2", "Task 3"),
-#' Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
-#' Priority = c("Medium", "High", "Low"),
-#' Category = c("SDS", "PSY", "CSC"),
-#' Completed = c(FALSE, TRUE, FALSE)
+#'   Description = c("Task 1", "Task 2", "Task 3"),
+#'   Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+#'   Priority = c("Medium", "High", "Low"),
+#'   Category = c("SDS", "PSY", "CSC"),
+#'   Completed = c(FALSE, TRUE, FALSE)
 #' )
 #'
 #' if (interactive()) {
 #'   split_tasks(tasks, "Priority", "High")
 #' }
 #'
-
 split_tasks <- function(dataframe, column_name, value_name, new_df_name = NULL) {
-
   # if user does not accurately input column name
   if (!(column_name %in% colnames(dataframe))) {
     stop("Category not found.")

@@ -8,7 +8,6 @@ sample_tasks <- data.frame(
 )
 
 test_that("summary_tasks correctly outputs num of completed and incomplete tasks", {
-
   # test output of complete and incomplete tasks
   expect_output(summary_tasks(sample_tasks), "Number of completed tasks:  1", all = FALSE)
   expect_output(summary_tasks(sample_tasks), "Number of incomplete tasks:  2", all = FALSE)

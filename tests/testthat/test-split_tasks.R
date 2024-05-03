@@ -15,5 +15,3 @@ test_that("split_tasks correctly split tasks based on category 'Priority'", {
 test_that("split_tasks correctly identifies incorrect user inputs in category name", {
   expect_error(split_tasks(sample_tasks, "High", "WRONGINPUT"))
 })
-
-

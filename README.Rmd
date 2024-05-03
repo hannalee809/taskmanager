@@ -44,7 +44,6 @@ add_task()
 You can delete, edit, organize, summarize, split, and find a task with the functions below:
 
 ```{r eval=FALSE}
-
 # add task to existing data frame
 add_task(tasks_df)
 

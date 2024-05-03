@@ -6,11 +6,11 @@
 #' @export
 #' @examples
 #' tasks <- data.frame(
-#' Description = c("Task 1", "Task 2", "Task 3"),
-#' Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
-#' Priority = c("Medium", "High", "Low"),
-#' Category = c("SDS", "PSY", "CSC"),
-#' Completed = c(FALSE, TRUE, FALSE)
+#'   Description = c("Task 1", "Task 2", "Task 3"),
+#'   Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+#'   Priority = c("Medium", "High", "Low"),
+#'   Category = c("SDS", "PSY", "CSC"),
+#'   Completed = c(FALSE, TRUE, FALSE)
 #' )
 #'
 #' if (interactive()) {
@@ -25,9 +25,11 @@ summary_tasks <- function(tasks) {
 
   # total number of completed and incomplete tasks
   cat("Number of completed tasks: ", sum(tasks$Completed), "\n")
-  cat("Number of incomplete tasks: ",
-      sum(tasks$Completed == FALSE),
-      "\n\n")
+  cat(
+    "Number of incomplete tasks: ",
+    sum(tasks$Completed == FALSE),
+    "\n\n"
+  )
 
   # tasks with highest priority
   # tasks$Priority <- factor(tasks$Priority, levels = c("High", "Medium", "Low"))
@@ -36,7 +38,7 @@ summary_tasks <- function(tasks) {
 
   # tasks with closest due date
   tasks$Due_Date <- as.Date(strptime(tasks$Due_Date, "%m-%d-%Y"))
-  closest_due_date_task <- tasks[order(tasks$Due_Date)[1],]
+  closest_due_date_task <- tasks[order(tasks$Due_Date)[1], ]
   cat("\nTask with closest due date:\n")
   print(closest_due_date_task)
   cat("\n")
@@ -61,11 +63,7 @@ summary_tasks <- function(tasks) {
     } else {
       cat("End of Summary")
     }
-
   } else {
     cat("You have no overdue tasks.\n")
   }
-
 }
-
-
