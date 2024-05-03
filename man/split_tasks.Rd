@@ -19,5 +19,16 @@ A function where the user inputs what data frame they want to split and by
 what param they want to split it by.
 }
 \examples{
-split_tasks(tasks, "Category", "Homework")
+tasks <- data.frame(
+Description = c("Task 1", "Task 2", "Task 3"),
+Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+Priority = c("Medium", "High", "Low"),
+Category = c("SDS", "PSY", "CSC"),
+Completed = c(FALSE, TRUE, FALSE)
+)
+
+if (interactive()) {
+  split_tasks(tasks, "Priority", "High")
+}
+
 }

@@ -20,13 +20,3 @@ The user inputs their desired phrase they want to search for and find and
 under which data frame it may be under, and the function returns under what
 row it is. If there is multiple matches, it returns each one.
 }
-\examples{
-tasks <- data.frame(
- Description = c("physics hw 1", "physics hw 2", "math 1"),
- Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
- Priority = c("High", "Medium", "Low"),
- Category = c("Homework", "Homework", "Assignment"),
- Completed = c(FALSE, FALSE, TRUE)
-)
-tasks <- find_task(tasks, "hw")
-}

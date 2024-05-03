@@ -20,5 +20,16 @@ Given a data frame, which represents a to do list, organize the
 to do tasks by columns named due date, completion status, or category
 }
 \examples{
-organize(to_do_list)
+tasks <- data.frame(
+Description = c("Task 1", "Task 2", "Task 3"),
+Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+Priority = c("Medium", "High", "Low"),
+Category = c("SDS", "PSY", "CSC"),
+Completed = c(FALSE, TRUE, FALSE)
+)
+
+if (interactive()) {
+  organize_tasks(tasks)
+}
+
 }

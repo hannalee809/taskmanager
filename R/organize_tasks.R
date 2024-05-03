@@ -9,7 +9,18 @@
 #' @returns returns a data frame
 #' @export
 #' @examples
-#' organize(to_do_list)
+#' tasks <- data.frame(
+#' Description = c("Task 1", "Task 2", "Task 3"),
+#' Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+#' Priority = c("Medium", "High", "Low"),
+#' Category = c("SDS", "PSY", "CSC"),
+#' Completed = c(FALSE, TRUE, FALSE)
+#' )
+#'
+#' if (interactive()) {
+#'   organize_tasks(tasks)
+#' }
+#'
 organize_tasks <- function(tasks, choice = NULL) {
   # Check if the choice is provided by the user
   if (is.null(choice)) {

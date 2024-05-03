@@ -16,16 +16,17 @@
 #'
 #' @examples
 #' tasks <- data.frame(
-#'  Description = c("physics hw 1", "physics hw 2", "math 1"),
-#'  Due_Date = as.Date(as.character("2024-04-18", "2024-04-19", "2024-04-19")),
-#'  Priority = c("High", "Medium", "Low"),
-#'  Category = c("Homework", "Homework", "Assignment"),
-#'  Completed = c(FALSE, FALSE, TRUE)
+#' Description = c("Task 1", "Task 2", "Task 3"),
+#' Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+#' Priority = c("Medium", "High", "Low"),
+#' Category = c("SDS", "PSY", "CSC"),
+#' Completed = c(FALSE, TRUE, FALSE)
 #' )
-
-#' tasks <- find_task(tasks, "hw")
-
-
+#'
+#' if (interactive()) {
+#'   find_task(tasks, "Task 1)
+#' }
+#'
 # given a data frame and a phrase, it returns all rows and position/indexes
 # of occurrences. Not case sensitive.
 find_task <- function (dataframe, phrase) {

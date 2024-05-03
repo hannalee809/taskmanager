@@ -1,13 +1,24 @@
 #' @title Delete specific tasks from data frame
 #'
-#' @param tasks the name of the data frame
+#' @param tasks,description_name the name of the data frame and the optional description of the task to be deleted
 #'
 #' @return An updated_tasks data frame that does not include the deleted tasks
 #'
 #' @export
 #'
 #' @examples
-#' delete_task(tasks)
+#' tasks <- data.frame(
+#' Description = c("Task 1", "Task 2", "Task 3"),
+#' Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+#' Priority = c("Medium", "High", "Low"),
+#' Category = c("SDS", "PSY", "CSC"),
+#' Completed = c(FALSE, TRUE, FALSE)
+#' )
+#'
+#' if (interactive()) {
+#'   delete_tasks(tasks)
+#' }
+#'
 delete_task <- function(tasks, description_name = NULL) {
   if (nrow(tasks) == 0) {
     cat("No tasks to delete.\n")

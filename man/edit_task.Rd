@@ -22,5 +22,16 @@ finds it by taking in the row number and returning options to edit the whole
 row.
 }
 \examples{
-tasks <- edit_function(tasks, 2)
+tasks <- data.frame(
+Description = c("Task 1", "Task 2", "Task 3"),
+Due_Date = c("04-21-2024", "05-10-2025", "05-10-2025"),
+Priority = c("Medium", "High", "Low"),
+Category = c("SDS", "PSY", "CSC"),
+Completed = c(FALSE, TRUE, FALSE)
+)
+
+if (interactive()) {
+  edit_task(tasks, 1)
+}
+
 }
