@@ -27,23 +27,50 @@
 #'   edit_task(tasks, 1)
 #' }
 #'
-edit_task <- function(dataframe, row_number) {
-  # Check if row number is within range
-  if (row_number < 1 || row_number > nrow(dataframe)) {
-    stop("Row number does not exist in the data frame.")
+
+edit_task <- function(old_data_frame, row_number) {
+
+  if (row_number < 1 || row_number > nrow(old_data_frame)) {
+    stop("Invalid row number")
+  }
+  new_data_frame <- old_data_frame
+  for (col_name in colnames(old_data_frame)) {
+    cat("Enter new value for", col_name, "in row", row_number, ": ")
+    new_value <- readline(prompt = "")
+    if (new_value == "keep") {
+      next
+    }
+    if (col_name == "Description" || col_name == "Category") {
+      if (!is.character(new_value)) {
+        warning("Input must be a character for this column")
+      }
+    }
+    if (col_name == "Due_Date") {
+      validate_date_format <- function(input_string) {
+        tryCatch({
+          as.Date(input_string)
+          return(TRUE)
+        }, error = function(e) {
+          return(FALSE)
+        })
+      }
+      if (isFALSE(validate_date_format(new_value))){
+        warning("Must be in YYYY-MM-DD format for this column")
+      }
+    }
+    if (col_name == "Priority") {
+      if (new_value != "High" && new_value != "Medium" && new_value != "Low") {
+        warning("Input must be a the words, High, Medium, or Low for this column")
+      }
+    }
+    if (col_name == "Completed") {
+      if (new_value != "TRUE" && new_value != "FALSE") {
+        warning("Input must be TRUE or FALSE for this column")
+      }
+    }
+    new_data_frame[row_number, col_name] <- new_value
   }
 
-  print(dataframe[row_number, ])
-  cat("If you would like to keep the information as is, type the word keep")
-  cat("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in %Y-%m-%d form, and completion must be (capitalized) TRUE or FALSE")
-  for (i in 1:ncol(dataframe[row_number, ])) {
-    new_val <- readline(prompt = paste("What do you want to change the", names(dataframe)[i], "to? "))
-    if (new_val == "keep") {
-      dataframe[row_number, ][i] <- dataframe[row_number, ][i]
-      print(dataframe[row_number, ][i])
-    } else {
-      dataframe[row_number, ][i] <- new_val
-      print(dataframe[row_number, ][i])
-    }
-  }
+  return(new_data_frame)
 }
+
