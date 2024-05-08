@@ -21,7 +21,7 @@ library(taskmanager)
 The taskmanager package helps a user organize, create, delete, and edit tasks in a data frame representing a list of tasks a user is trying to complete. A user would usually start by creating a list of tasks to complete using the add_task() function
 
 ```{r, eval=FALSE}
-add_task()
+add_tasks()
 ```
 
 The user will be asked the name for the new data frame, which must follow normal name conventions (can't start with number, contain spaces, etc). Then the user will be asked the description for the new task ("finish final project", "do laundry", etc). Then they will be asked when the task is due, using YYYY-MM-DD format. Then they will provide the priority the task holds (High, Medium, Low). Then the user will be asked the category of the task (School, Personal, Health, etc). Finally, the user will be asked if they'd like to add another task. If yes, the user will go through the same steps described above. If no, the user will now see their newly created data frame. 
@@ -30,14 +30,14 @@ To follow along with my examples, enter data_frame for the name of the data fram
 If the user would like to add a task later on, they can call the add_task() function with the data frame they'd like to add a task to in the argument/inside the parenthesis of add_task(). 
 
 ```{r, eval=FALSE}
-add_task(data_frame)
+add_tasks(data_frame)
 ```
 
 The user should then answer the question asked to add a new task.
 If the user has made a mistake and would like to edit the information of a task, they can use the edit_function() function. The arguments needed are the name of the data frame/task list, the column number of the task you'd like to edit, and the description of the task in quotes "". If the user needs to find this information, then they can view their data frame of tasks to see this.
 
 ```{r, eval=FALSE}
-edit_function(data_frame, 1, "do a backflip")
+edit_tasks(data_frame, 1, "do a backflip")
 ```
 
 You can then edit the description, due date, priority, category, and completed status. If you'd like to keep the same information for one of these, simply type in 'keep' to keep the same information.
@@ -45,7 +45,7 @@ You can then edit the description, due date, priority, category, and completed s
 To delete a task, use the delete_task() function. You have to supply the data frame you'd like to delete task(s) from. 
 
 ```{r, eval=FALSE}
-delete_task(data_frame)
+delete_tasks(data_frame)
 ```
 
 Simply type the description of the task to delete the entire task. No quotations needed "".
@@ -53,7 +53,7 @@ Simply type the description of the task to delete the entire task. No quotations
 To organize your data frame of tasks, you can use the organize() function. 
 
 ```{r, eval=FALSE}
-organize(data_frame)
+organize_tasks(data_frame)
 ```
 
 You will be asked if you'd like to organize the tasks by due date, completion status, category, or priority level. Enter the corresponding number to make your selection (1,2,3,or 4)
@@ -62,12 +62,25 @@ If you would like to split a data frame of tasks to create a separate data frame
 For this example I added two tasks to a data frame called to_do
 
 ```{r, eval=FALSE}
-split_function(to_do, 1, "high five")
+split_tasks(to_do, 1, "high five")
 ```
 
-The last function to use is the summary_tasks() function. This function allows you to see a general summary of your task data frame. This will be helpful when you have really long task data frames. You will be able to see a summary of how many tasks the data frame has, how many tasks you have completed and not completed, your highest priority tasks, your tasks with the closest due date, and your overdue tasks. You will be asked if you'd like to edit the overdue tasks, you can say yes or no.
+Another function is the summary_tasks() function. This function allows you to see a general summary of your task data frame. This will be helpful when you have really long task data frames. You will be able to see a summary of how many tasks the data frame has, how many tasks you have completed and not completed, your highest priority tasks, your tasks with the closest due date, and your overdue tasks. You will be asked if you'd like to edit the overdue tasks, you can say yes or no.
 
 ```{r, eval=FALSE}
 summary_tasks(to_do_task_list)
 ```
 
+The last function is the find_tasks() function, which allows user to, after they input the data frame and word they would like to find into the function, find specific occurrences of said phrase. It returns to the user at what row(s) these phrases occur at. This can be particularly helpful in using other functions, such as the edit function, where it is required to know what row you want to edit. If you want to change the completion status of Physics Homework 2, the user can do this:
+
+```{r, eval=FALSE}
+find_tasks(task_list, "Physics")
+```
+
+Where it will return a row of occurrences, such as rows 3, 6, 7. The user can then look at those rows and determine which one they want to edit. Or, they could simply do this:
+
+```{r, eval=FALSE}
+find_tasks(task_list, "Physics 3")
+```
+
+Which may return just one row. This is the row that is needed to be edited. 

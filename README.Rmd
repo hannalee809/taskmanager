@@ -38,20 +38,20 @@ This is a basic example showing you how to create a task list:
 ```{r eval=FALSE}
 library(taskmanager)
 
-add_task()
+add_tasks()
 ```
 
 You can delete, edit, organize, summarize, split, and find a task with the functions below:
 
 ```{r eval=FALSE}
 # add task to existing data frame
-add_task(tasks_df)
+add_tasks(tasks_df)
 
-delete_task(tasks_df)
+delete_tasks(tasks_df)
 
-edit_task(tasks_df, column_num, "task_description")
+edit_tasks(tasks_df, 2)
 
-find_task(tasks_df, "task_description")
+find_tasks(tasks_df, "task_description")
 
 organize_tasks(tasks_df)
 
@@ -60,13 +60,13 @@ split_tasks(tasks_df, column_num, "task_desc_under_column_num")
 summary_tasks(tasks_df)
 ```
 
-add_task() can take the input of a df of a task list
+add_tasks() can take the input of a df of a task list
 
-delete_task() takes in the name of the df of a task list
+delete_tasks() takes in the name of the df of a task list
 
-edit_task() takes in the name of the df of a task list, the column number of the task you'd like to edit, and the task description in "quotes"
+edit_tasks() takes in the name of the df of a task list and the desired row number of the row needed to be changed
 
-find_task() takes in the name of the df of a task list and the description of the task in "quotes"
+find_tasks() takes in the name of the df of a task list and the description of the task in "quotes"
 
 organize_tasks() takes in the name of the df of a task list
 
