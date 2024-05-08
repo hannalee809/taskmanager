@@ -11,7 +11,7 @@
 #'   add_task()
 #' }
 #'
-add_task <- function(df = NULL) {
+add_tasks <- function(df = NULL) {
   # Check if df argument is provided
   if (is.null(df)) {
     # Ask the user for the name of the data frame

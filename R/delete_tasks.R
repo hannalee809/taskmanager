@@ -19,7 +19,7 @@
 #'   delete_tasks(tasks)
 #' }
 #'
-delete_task <- function(tasks, description_name = NULL) {
+delete_tasks <- function(tasks, description_name = NULL) {
   if (nrow(tasks) == 0) {
     cat("No tasks to delete.\n")
   }

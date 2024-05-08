@@ -8,10 +8,10 @@ sample_tasks <- data.frame(
 )
 
 test_that("delete_task correctly deletes a task by description", {
-  delete_task(sample_tasks, "Task 1")
+  delete_tasks(sample_tasks, "Task 1")
   expect_false("Task 1" %in% updated_tasks$Description)
 })
 
-test_that("delete_task indicates that a task does not exist in the tasks data frame", {
-  expect_error(delete_task(sample_tasks, "Task 10"))
+test_that("delete_tasks indicates that a task does not exist in the tasks data frame", {
+  expect_error(delete_tasks(sample_tasks, "Task 10"))
 })
