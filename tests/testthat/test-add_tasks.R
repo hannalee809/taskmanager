@@ -1,7 +1,7 @@
 # Define a test case for adding a task to a new data frame
 testthat::test_that("Adding a task to a new data frame works correctly", {
-  # Simulate calling add_task without any existing data frame name
-  add_task <- function(df_name = NULL) {
+  # Simulate calling add_tasks without any existing data frame name
+  add_tasks <- function(df_name = NULL) {
     # Create a sample data frame
     tasks <- data.frame(
       Description = "New Task",
@@ -16,8 +16,8 @@ testthat::test_that("Adding a task to a new data frame works correctly", {
     assign("tasks", tasks, envir = .GlobalEnv)
   }
 
-  # Call the add_task function
-  add_task()
+  # Call the add_tasks function
+  add_tasks()
 
   # Check if the tasks data frame is created in the global environment
   testthat::expect_true(exists("tasks", envir = .GlobalEnv))
@@ -33,8 +33,8 @@ testthat::test_that("Adding a task to a new data frame works correctly", {
 
 # Define a test case for adding a task to an existing data frame
 testthat::test_that("Adding a task to an existing data frame works correctly", {
-  # Simulate calling add_task with an existing data frame name
-  add_task <- function(df_name = NULL) {
+  # Simulate calling add_tasks with an existing data frame name
+  add_tasks <- function(df_name = NULL) {
     # Create a sample data frame
     tasks <- data.frame(
       Description = "Existing Task",
@@ -55,8 +55,8 @@ testthat::test_that("Adding a task to an existing data frame works correctly", {
     assign(df_name, tasks, envir = .GlobalEnv)
   }
 
-  # Call the add_task function with the existing data frame name
-  add_task("tasks")
+  # Call the add_tasks function with the existing data frame name
+  add_tasks("tasks")
 
   # Check if the task was added correctly to the existing data frame
   updated_tasks <- get("tasks", envir = .GlobalEnv)

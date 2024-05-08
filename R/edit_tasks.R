@@ -28,7 +28,7 @@
 #' }
 #'
 
-edit_task <- function(old_data_frame, row_number) {
+edit_tasks <- function(old_data_frame, row_number) {
 
   if (row_number < 1 || row_number > nrow(old_data_frame)) {
     stop("Invalid row number")
