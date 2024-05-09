@@ -48,14 +48,17 @@ edit_tasks <- function(dataframe, row_number) {
     }
     if (col_name == "Due_Date") {
       validate_date_format <- function(input_string) {
-        tryCatch({
-          as.Date(input_string)
-          return(TRUE)
-        }, error = function(e) {
-          return(FALSE)
-        })
+        tryCatch(
+          {
+            as.Date(input_string)
+            return(TRUE)
+          },
+          error = function(e) {
+            return(FALSE)
+          }
+        )
       }
-      if (isFALSE(validate_date_format(new_value))){
+      if (isFALSE(validate_date_format(new_value))) {
         warning("Must be in YYYY-MM-DD format for this column")
       }
     }
@@ -74,4 +77,3 @@ edit_tasks <- function(dataframe, row_number) {
 
   edited_tasks <<- new_data_frame
 }
-
