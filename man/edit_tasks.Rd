@@ -4,7 +4,7 @@
 \alias{edit_tasks}
 \title{The Edit function}
 \usage{
-edit_tasks(old_data_frame, row_number)
+edit_tasks(dataframe, row_number)
 }
 \arguments{
 \item{dataframe, row_number, }{These inputs are all required so
