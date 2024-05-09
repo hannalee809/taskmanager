@@ -27,14 +27,18 @@
 #'   edit_task(tasks, 1)
 #' }
 #'
-
-edit_tasks <- function(old_data_frame, row_number) {
-
-  if (row_number < 1 || row_number > nrow(old_data_frame)) {
-    stop("Invalid row number")
+edit_tasks <- function(dataframe, row_number) {
+  # Check if row number is within range
+  if (row_number < 1 || row_number > nrow(dataframe)) {
+    stop("Row number does not exist in the data frame.")
   }
-  new_data_frame <- old_data_frame
-  for (col_name in colnames(old_data_frame)) {
+
+  print(dataframe[row_number, ])
+  cat("If you would like to keep the information as is, type the word keep")
+  cat("Desc and category have to be a character, priority must be High, Medium, or Low, date must be in %Y-%m-%d form, and completion must be (capitalized) TRUE or FALSE\n")
+
+  new_data_frame <- dataframe
+  for (col_name in colnames(dataframe)) {
     cat("Enter new value for", col_name, "in row", row_number, ": ")
     new_value <- readline(prompt = "")
     if (new_value == "keep") {
@@ -71,6 +75,6 @@ edit_tasks <- function(old_data_frame, row_number) {
     new_data_frame[row_number, col_name] <- new_value
   }
 
-  return(new_data_frame)
+  edited_tasks <<- new_data_frame
 }
 
