@@ -7,10 +7,7 @@
 #' @param dataframe,row_number, These inputs are all required so
 #' that the function can edit the correct row.
 #'
-#' @returns Outputs a readline where the user gets to input new values if needed
-#' in their desired data frame. There is an option to "keep" the old values if
-#' needed by typing in "keep", and if the user tries to input a value that does
-#' not align with each column's params, a warning is issued.
+#' @returns edited_tasks data frame with the edited tasks
 #'
 #' @export
 #'

@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 library(taskmanager)
 ```
 
-The taskmanager package helps a user organize, create, delete, and edit tasks in a data frame representing a list of tasks a user is trying to complete. A user would usually start by creating a list of tasks to complete using the add_task() function
+The taskmanager package helps a user organize, create, delete, find, summarize, and edit tasks in a data frame representing a list of tasks a user is trying to complete. A user would usually start by creating a list of tasks to complete using the add_task() function
 
 ```{r, eval=FALSE}
 add_tasks()
@@ -37,18 +37,18 @@ The user should then answer the question asked to add a new task.
 If the user has made a mistake and would like to edit the information of a task, they can use the edit_function() function. The arguments needed are the name of the data frame/task list, the column number of the task you'd like to edit, and the description of the task in quotes "". If the user needs to find this information, then they can view their data frame of tasks to see this.
 
 ```{r, eval=FALSE}
-edit_tasks(data_frame, 1, "do a backflip")
+edit_tasks(data_frame, 1)
 ```
 
-You can then edit the description, due date, priority, category, and completed status. If you'd like to keep the same information for one of these, simply type in 'keep' to keep the same information.
+To edit tasks, the user should input the name of the data frame and the row number they wish to edit. You can then edit the description, due date, priority, category, and completed status. If you'd like to keep the same information for one of these, simply type in 'keep' to keep the same information. The output will return an edited_tasks data frame with the edited tasks.
 
 To delete a task, use the delete_task() function. You have to supply the data frame you'd like to delete task(s) from. 
 
 ```{r, eval=FALSE}
-delete_tasks(data_frame)
+delete_tasks(data_frame, "HW")
 ```
 
-Simply type the description of the task to delete the entire task. No quotations needed "".
+To delete a task, the user inputs the name of the data frame and optionally can input the description of the task in quotations. If not, the function will ask the user to type the description of the task to delete the entire task. No quotations needed "". The output will return an updated_tasks data frame without the deleted tasks.
 
 To organize your data frame of tasks, you can use the organize() function. 
 
